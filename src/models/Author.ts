@@ -8,7 +8,7 @@ export interface IAuthorModel extends IAuthor, Document {}
 
 const AuthorSchema: Schema = new Schema(
     {
-        name: { type: 'string', required: true }
+        name: { type: String, required: true }
     },
     {
         versionKey: false

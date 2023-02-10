@@ -4,6 +4,8 @@ import mongoose from 'mongoose';
 import { config } from './config/config';
 import Logging from './library/Logging';
 import authorRoutes from './routes/Author';
+import bookRoutes from './routes/Book';
+
 const router = express();
 
 /** Connect to Mongo */
@@ -48,6 +50,8 @@ const StartServer = () => {
 
     /** Routes */
     router.use('/authors', authorRoutes);
+    router.use('/books', bookRoutes);
+
     /** Healthcheck */
     router.get('/ping', (req, res, next) => res.status(200).json({ hello: 'world' }));
 
